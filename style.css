@@ -1,13 +1,182 @@
-/* ===== OTIMIZAÇÕES PARA FOTOS REAIS ===== */
+/* ===== DARK LAB THEME COMPLETO ===== */
+:root {
+    --darklab-black: #000000;
+    --darklab-dark: #0a0a0a;
+    --darklab-red: #ff0000;
+    --darklab-gray: #1a1a1a;
+    --darklab-light: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--darklab-black);
+    color: var(--darklab-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
 .header {
     background: 
         radial-gradient(circle at 20% 50%, rgba(255,0,0,0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255,0,0,0.1) 0%, transparent 50%),
         linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)),
-        url('assets/images/costas.jpg'); /* ALTERADO */
+        url('assets/images/costas.jpg');
     background-size: cover;
     background-position: center 30%;
     background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid var(--darklab-red);
+}
+
+.header-content {
+    padding: 60px 0;
+}
+
+.main-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #fff, var(--darklab-red));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #bbb;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.tagline {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff4444;
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    border: 2px solid var(--darklab-red);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.darklab-badge {
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--darklab-red);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid var(--darklab-red);
+}
+
+.cta-button {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 40px;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid #333;
+}
+
+.cta-button:hover {
+    background: #ff0000;
+    color: #000;
+    border-color: #ff0000;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    padding: 100px 0;
+}
+
+.dark-section {
+    background: #111;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+}
+
+.dark-section .section-title::after {
+    background: #ff0000;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+/* ===== SOBRE ===== */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.highlight-text {
+    font-size: 1.3rem !important;
+    color: #fff !important;
+    border-left: 4px solid #ff0000;
+    padding-left: 20px;
+    margin-bottom: 30px !important;
 }
 
 /* Container para foto na seção Sobre */
@@ -31,6 +200,86 @@
 
 .photo-container:hover img {
     transform: scale(1.05);
+}
+
+/* ===== ESTATÍSTICAS ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-card {
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #1a1a1a;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.stat-card:hover {
+    border-left-color: #ff0000;
+    background: #151515;
+}
+
+.stat-number {
+    color: #ff0000;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.stat-desc {
+    color: #bbb;
+    font-size: 1rem;
+}
+
+/* ===== CONTEÚDO CARDS ===== */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.content-card {
+    background: #1a1a1a;
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    border-color: #222;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+}
+
+.content-card:hover .card-icon {
+    color: #ff0000;
+    text-shadow: 0 0 15px rgba(255,0,0,0.3);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #666;
+    margin-bottom: 25px;
+    transition: all 0.3s;
+}
+
+.content-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.content-card p {
+    color: #bbb;
+    font-size: 1rem;
 }
 
 /* Galeria de conteúdo */
@@ -61,66 +310,269 @@
     object-fit: cover;
 }
 
-/* Estatísticas com design mais clean */
-.stat-card {
-    background: #111;
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 4px solid #1a1a1a;
-    transition: all 0.3s ease;
+/* ===== DARK LAB SECTION ===== */
+.darklab-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
-.stat-card:hover {
-    border-left-color: #ff0000;
-    background: #151515;
+.darklab-text h3 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #fff;
 }
 
-.stat-number {
+.darklab-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.synergy-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.synergy-list li {
+    margin-bottom: 15px;
+    color: #ddd;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.synergy-list i {
     color: #ff0000;
-    font-size: 2.8rem;
-    font-weight: 800;
+    margin-right: 10px;
+}
+
+.darklab-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-placeholder {
+    background: #000;
+    border: 3px solid #ff0000;
+    border-radius: 15px;
+    padding: 50px 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.logo-placeholder span {
+    color: #ff0000;
+    font-size: 3rem;
+    font-weight: 900;
+    display: block;
     margin-bottom: 10px;
 }
 
-.stat-desc {
+.logo-placeholder p {
+    margin-top: 15px;
     color: #bbb;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
-/* Redução de elementos vermelhos para só detalhes */
-.content-card:hover {
-    border-color: #222;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+/* ===== CONTATO ===== */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
 }
 
-.content-card:hover .card-icon {
+.contact-info h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-info > p {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 40px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #333;
+    transition: all 0.3s;
+}
+
+.contact-item:hover {
+    border-left-color: #ff0000;
+    transform: translateX(10px);
+}
+
+.contact-item i {
+    font-size: 2rem;
     color: #ff0000;
-    text-shadow: 0 0 15px rgba(255,0,0,0.3);
+    min-width: 50px;
 }
 
-/* Botões mais discretos */
-.cta-button, .btn-darklab {
+.contact-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.contact-item p {
+    color: #bbb;
+    font-size: 1.1rem;
+}
+
+.steps-list {
+    list-style: none;
+    counter-reset: step-counter;
+    margin-bottom: 40px;
+}
+
+.steps-list li {
+    margin-bottom: 20px;
+    padding-left: 40px;
+    position: relative;
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+.steps-list li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.btn-darklab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background: #1a1a1a;
     color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
     border: 2px solid #333;
 }
 
-.cta-button:hover, .btn-darklab:hover {
+.btn-darklab:hover {
     background: #ff0000;
     color: #000;
     border-color: #ff0000;
 }
 
-/* Títulos mais clean */
-.section-title {
+/* ===== CTA FINAL ===== */
+.cta-final {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     color: #fff;
 }
 
-.section-title::after {
-    background: #333;
-    box-shadow: none;
+/* ===== FOOTER ===== */
+.footer {
+    background: #000;
+    padding: 60px 0 30px;
+    text-align: center;
+    border-top: 3px solid #333;
 }
 
-.dark-section .section-title::after {
-    background: #ff0000;
+.footer p {
+    margin-bottom: 15px;
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.footer-tag {
+    color: #ff0000 !important;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+    margin: 20px 0 !important;
+}
+
+.footer-links {
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 992px) {
+    .about-content,
+    .darklab-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        padding: 70px 0;
+    }
+    
+    .tagline, .darklab-badge {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
